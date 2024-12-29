@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortnite Account Lookup</title>
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Fortnite Account Lookup</h1>
+    <form method="POST" action="/process">
+        <input type="text" name="username" placeholder="Enter Fortnite Username" required>
+        <button type="submit">Find Account ID</button>
+    </form>
+    {% if account_id %}
+    <p>The account ID for {{ username }} is {{ account_id }}</p>
+    {% endif %}
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</body>
+</html>
